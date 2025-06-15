@@ -1,34 +1,42 @@
 
 body {
   font-family: 'Rubik', sans-serif;
-  background: #0e0f1a;
-  color: #ffffff;
-  padding: 2rem;
-}
-h1 {
-  color: #9d5df7;
-  text-align: center;
-}
-label {
-  display: block;
-  margin-top: 1.5rem;
-  font-weight: 500;
-}
-input, select, textarea {
-  width: 100%;
-  padding: 12px;
-  background: #1a1b2d;
+  background-color: #0f1018;
   color: white;
-  border: 1px solid #444;
+  margin: 0;
+  padding: 20px;
+}
+main {
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+input, textarea {
+  padding: 10px;
+  background: #1a1b2b;
+  color: white;
+  border: none;
   border-radius: 8px;
-  margin-top: 0.5rem;
+  width: 100%;
+}
+textarea {
+  height: 100px;
 }
 button {
-  margin-top: 1rem;
-  padding: 10px 20px;
-  background-color: #9d5df7;
+  background: #9c5bfa;
   border: none;
-  color: white;
+  padding: 10px 20px;
   border-radius: 8px;
+  color: white;
+  font-weight: 500;
   cursor: pointer;
+}
+.row {
+  display: flex;
+  gap: 20px;
+}
+h1 {
+  color: #e0c6ff;
 }
