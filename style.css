@@ -1,0 +1,40 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: #0f0f17;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+input, select, textarea {
+    background-color: #1f1f2e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+textarea {
+    min-height: 100px;
+}
+button {
+    background-color: #8f5bff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.status {
+    margin-top: 10px;
+    font-weight: bold;
+}
