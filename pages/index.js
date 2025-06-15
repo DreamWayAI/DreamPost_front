@@ -7,37 +7,41 @@ export default function Home() {
   const [time, setTime] = useState('');
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen p-6">
-      <h1 className="text-2xl font-bold mb-4">DreamPost ✨</h1>
-      <textarea
-        className="w-full p-2 text-black rounded mb-4"
-        rows={5}
-        placeholder="Напиши пост..."
-        value={post}
-        onChange={(e) => setPost(e.target.value)}
-      />
-      <input
-        type="text"
-        className="w-full p-2 text-black rounded mb-4"
-        placeholder="Промт для зображення"
-        value={image}
-        onChange={(e) => setImage(e.target.value)}
-      />
-      <div className="flex gap-2 mb-4">
-        <input
-          type="date"
-          className="p-2 text-black rounded"
-          value={date}
-          onChange={(e) => setDate(e.target.value)}
+    <div className="bg-gray-950 text-white min-h-screen p-6 font-sans">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold mb-6 text-purple-400">DreamPost ✨</h1>
+        <textarea
+          className="w-full p-4 text-black rounded-lg mb-4"
+          rows={5}
+          placeholder="Напиши пост..."
+          value={post}
+          onChange={(e) => setPost(e.target.value)}
         />
         <input
-          type="time"
-          className="p-2 text-black rounded"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
+          type="text"
+          className="w-full p-3 text-black rounded-lg mb-4"
+          placeholder="Промт для зображення"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
         />
+        <div className="flex gap-2 mb-6">
+          <input
+            type="date"
+            className="p-3 text-black rounded-lg"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+          <input
+            type="time"
+            className="p-3 text-black rounded-lg"
+            value={time}
+            onChange={(e) => setTime(e.target.value)}
+          />
+        </div>
+        <button className="bg-purple-600 hover:bg-purple-800 transition px-6 py-3 rounded-xl text-white font-medium">
+          Опублікувати 🚀
+        </button>
       </div>
-      <button className="bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded">Опублікувати 🚀</button>
     </div>
   );
 }
