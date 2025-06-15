@@ -8,10 +8,13 @@ export default function Home() {
 
   const handlePublish = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/publish`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ post, image, date, time })
+        body: JSON.stringify({
+          text: post,
+          image_url: image || null
+        })
       });
 
       if (!res.ok) throw new Error('Помилка при надсиланні');
@@ -37,7 +40,7 @@ export default function Home() {
         <input
           type="text"
           className="w-full p-3 text-black rounded-lg mb-4"
-          placeholder="Промт для зображення"
+          placeholder="Промт або URL зображення"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
