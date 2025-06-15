@@ -6,6 +6,23 @@ export default function Home() {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
 
+  const handlePublish = async () => {
+    try {
+      const res = await fetch('https://dreampostback-production.up.railway.app/post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ post, image, date, time })
+      });
+
+      if (!res.ok) throw new Error('Помилка при надсиланні');
+
+      const data = await res.json();
+      alert(data.message || '✅ Успішно надіслано!');
+    } catch (err) {
+      alert('❌ Помилка: ' + err.message);
+    }
+  };
+
   return (
     <div className="bg-gray-950 text-white min-h-screen p-6 font-sans">
       <div className="max-w-2xl mx-auto">
@@ -38,7 +55,10 @@ export default function Home() {
             onChange={(e) => setTime(e.target.value)}
           />
         </div>
-        <button className="bg-purple-600 hover:bg-purple-800 transition px-6 py-3 rounded-xl text-white font-medium">
+        <button
+          onClick={handlePublish}
+          className="bg-purple-600 hover:bg-purple-800 transition px-6 py-3 rounded-xl text-white font-medium"
+        >
           Опублікувати 🚀
         </button>
       </div>
