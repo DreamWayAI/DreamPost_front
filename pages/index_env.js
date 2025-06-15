@@ -8,7 +8,7 @@ export default function Home() {
 
   const handlePublish = async () => {
     try {
-      const res = await fetch('https://dreampostback-production.up.railway.app/post', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/post`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ post, image, date, time })
